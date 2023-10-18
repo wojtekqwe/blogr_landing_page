@@ -1,7 +1,85 @@
+.root {
+  font-size: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.header {
+  background-color: hsl(356, 100%, 66%);
+  background-image: url("../images/bg-pattern-intro-mobile.svg");
+  background-position: 40% 40%;
+  background-size: 300%;
+  border-bottom-left-radius: 150px;
+  height: 80vh;
+  min-height: 600px;
+  padding: 30px;
+  position: relative;
+}
+.header__main {
+  color: hsl(0, 0%, 100%);
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+}
+.header__title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.header__subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100px;
+}
+.nav__items {
+  display: none;
+}
+.nav__menu {
+  height: 65px;
+  padding: 20px;
+}
+.nav__menu img {
+  height: 100%;
+}
+
+.buttons__btn {
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 30px;
+  color: hsl(355, 100%, 74%);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 15px 35px;
+}
+.buttons__btn--learn-more {
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  margin-left: 20px;
 }/*# sourceMappingURL=style.css.map */
