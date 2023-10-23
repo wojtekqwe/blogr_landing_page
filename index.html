@@ -16,25 +16,67 @@
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main>
       <header class="header">
         <nav class="nav">
-          <div class="logo"><img src="./images/logo.svg" alt="" /></div>
-          <div class="nav__menu">
-            <img src="./images/icon-hamburger.svg" alt="" />
+          <div class="logo"><img src="./images/logo.svg" alt="Logo" /></div>
+          <div class="nav__menu-icon">
+            <div class="line"></div>
+            <div class="line center"></div>
+            <div class="line"></div>
           </div>
-          <ul class="nav__items">
-            <li class="nav__item">Product</li>
-            <li class="nav__item">Company</li>
-            <li class="nav__item">Connect</li>
-            <div class="items__buttons buttons">
+          <div class="nav__menu menu">
+            <ul class="menu__items items">
+              <li class="items__title">
+                Product <i class="fa-solid fa-chevron-down"></i>
+              </li>
+              <div class="items__list">
+                <li class="item">Overview</li>
+                <li class="item">Pricing</li>
+                <li class="item">Marketplace</li>
+                <li class="item">Features</li>
+                <li class="item">Integrations</li>
+              </div>
+            </ul>
+
+            <!-- Test  -->
+            <ul class="menu__items items">
+              <li class="items__title">
+                Company <i class="fa-solid fa-chevron-down"></i>
+              </li>
+              <div class="items__list">
+                <li class="item">About</li>
+                <li class="item">Team</li>
+                <li class="item">Blog</li>
+                <li class="item">Careers</li>
+              </div>
+            </ul>
+
+            <ul class="menu__items items">
+              <li class="items__title">
+                Connect <i class="fa-solid fa-chevron-down"></i>
+              </li>
+              <div class="items__list">
+                <li class="item">Contact</li>
+                <li class="item">Newsletter</li>
+                <li class="item">Linkedin</li>
+              </div>
+            </ul>
+
+            <div class="menu__buttons buttons">
               <button class="buttons__btn buttons__btn--login">Login</button>
-              <button class="buttons__btn">Register</button>
+              <button class="buttons__btn buttons__btn--register">
+                Sign Up
+              </button>
             </div>
-          </ul>
+          </div>
         </nav>
         <div class="header__main">
           <h1 class="header__title">A modern publishing platform</h1>
@@ -162,5 +204,7 @@
         </div>
       </footer>
     </main>
+
+    <script src="code.js"></script>
   </body>
 </html>
