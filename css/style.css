@@ -23,6 +23,7 @@ body {
   height: 80vh;
   min-height: 600px;
   padding: 30px;
+  overflow: hidden;
 }
 .header__main {
   color: hsl(0, 0%, 100%);
@@ -170,9 +171,9 @@ body {
   transition: 0.25s;
 }
 .buttons__btn:hover {
-  background-color: transparent;
+  background-color: hsl(355, 100%, 74%);
   color: hsl(0, 0%, 100%);
-  border: 1px solid hsl(0, 0%, 100%);
+  border: 1px solid hsl(355, 100%, 74%);
 }
 .buttons__btn--learn-more {
   background-color: transparent;
@@ -180,7 +181,9 @@ body {
   margin-left: 20px;
 }
 .buttons__btn--learn-more:hover {
-  border: 1px solid transparent;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%);
+  color: hsl(356, 100%, 66%);
 }
 .buttons__btn--login {
   color: hsl(237, 17%, 21%);
@@ -201,11 +204,13 @@ body {
   opacity: 1;
 }
 
-.menu__items.show .items__title i {
+.menu__items.show .items__title i,
+.menu__items.showMenu .items__title i {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.menu__items.show .items__list {
+.menu__items.show .items__list,
+.menu__items.showMenu .items__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,46 +289,86 @@ body {
     margin: 0 0 0 auto;
   }
   .nav__menu-desktop .buttons__btn {
-    cursor: pointer;
     height: 50px;
     padding: 5px 15px;
-    -webkit-transition: 0.25s;
-    transition: 0.25s;
-  }
-  .nav__menu-desktop .buttons__btn:hover {
-    background-color: transparent;
-    border: 1px solid hsl(0, 0%, 100%);
-    color: hsl(0, 0%, 100%);
   }
   .nav__menu-desktop .buttons__btn--register {
     background: hsl(0, 0%, 100%);
     color: hsl(356, 100%, 66%);
     margin: 0 0 0 10px;
   }
+  .nav__menu-desktop .buttons__btn--register:hover {
+    color: hsl(0, 0%, 100%);
+    background: hsl(355, 100%, 74%);
+    border: 1px solid hsl(355, 100%, 74%);
+  }
   .nav__menu-desktop .buttons__btn--login {
     background: transparent;
     border: 1px solid transparent;
     color: hsl(0, 0%, 100%);
   }
+  .nav__menu-desktop .buttons__btn--login:hover {
+    border: 1px solid hsl(0, 0%, 100%);
+  }
   .nav__menu-desktop .items__title {
     font-size: 1.4rem;
     padding: 5px;
     margin: 0 20px 0;
-    -webkit-transition: 0.25s;
-    transition: 0.25s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-bottom: 0px;
   }
   .nav__menu-desktop .items__title i {
     color: hsl(0, 0%, 100%);
     -webkit-transition: 0.25s;
     transition: 0.25s;
   }
-  .nav__menu-desktop .items__title i:hover {
-    color: #ebebeb;
+  .nav__menu-desktop .items__title::after {
+    background-color: hsl(0, 0%, 100%);
+    content: "";
+    display: block;
+    height: 2px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    width: 0%;
   }
-  .nav__menu-desktop .items__title:hover {
-    color: #ebebeb;
+  .nav__menu-desktop .items__title:hover::after {
+    width: 75%;
+  }
+  .nav__menu-desktop .menu__items {
+    position: relative;
   }
 }
+.menu__items.showMenu .items__list--desktop {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
+  padding: 15px 35px;
+  text-align: left;
+  top: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 120%;
+}
+.menu__items.showMenu .items__list--desktop .item {
+  background-color: transparent;
+  color: hsl(208, 49%, 24%);
+  display: block;
+  font-weight: 400;
+  margin: 5px 0;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.menu__items.showMenu .items__list--desktop .item:hover {
+  color: hsl(240, 10%, 16%);
+  font-weight: 700;
+}
+
 .section {
   margin: 80px auto 50px;
   background-color: hsl(0, 0%, 100%);

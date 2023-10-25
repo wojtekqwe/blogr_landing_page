@@ -1,71 +1,19 @@
-// const showMenuBtn = document.querySelector(".nav__menu-icon");
-// const iconMenu = document.querySelector(".nav__menu-icon img");
-
-// const mobileMenu = document.querySelector(".nav__menu");
-// const itemsMenu = document.querySelectorAll(".items__title");
-// const items = document.querySelectorAll(".item");
-// const iconsMenu = document.querySelectorAll(".items__title i");
-
-// let hamburgerMenu = true;
-
-// const hideOption = () => {
-//   items.forEach((item) => {
-//     item.classList.remove("show");
-//   });
-// };
-
-// const showOptionFromMenu = (element) => {
-//   hideOption();
-//   const array = element.querySelectorAll(".item");
-//   array.forEach((item) => {
-//     item.classList.toggle("show");
-//   });
-// };
-
-// const expandList = () => {
-//   itemsMenu.forEach((item) => {
-//     item.children[0].classList.add("fa-chevron-down");
-//     item.children[0].classList.remove("fa-chevron-up");
-//     item.addEventListener("click", (e) => {
-//       e.target.children[0].classList.add("fa-chevron-up");
-//       e.target.children[0].classList.remove("fa-chevron-down");
-//       showOptionFromMenu(e.target.parentElement);
-//     });
-//   });
-// };
-
-// const changeIconAndShowOrHideMenu = () => {
-//   mobileMenu.classList.toggle("show");
-//   if (hamburgerMenu) {
-//     iconMenu.src = "./images/icon-close.svg";
-//     iconMenu.style.height = "80%";
-//     hamburgerMenu = false;
-//     expandList();
-//   } else {
-//     iconMenu.src = "./images/icon-hamburger.svg";
-//     iconMenu.style.height = "50%";
-//     hamburgerMenu = true;
-//     hideOption();
-//   }
-// };
-// showMenuBtn.addEventListener("click", changeIconAndShowOrHideMenu);
-
 const btnHamburger = document.querySelector(".nav__menu-icon");
 const mobileMenu = document.querySelector(".nav__menu");
 const items = document.querySelectorAll(".menu__items");
 
-const removeClass = () => {
+const removeClass = (className) => {
   items.forEach((item) => {
-    item.classList.remove("show");
+    item.classList.remove(className);
   });
 };
-const showOrHideOption = (element) => {
-  if (element.classList.contains("show")) {
-    removeClass();
-    element.classList.remove("show");
+const showOrHideOption = (element, className) => {
+  if (element.classList.contains(className)) {
+    removeClass(className);
+    element.classList.remove(className);
   } else {
-    removeClass();
-    element.classList.add("show");
+    removeClass(className);
+    element.classList.add(className);
   }
 };
 
@@ -78,9 +26,21 @@ const showOrHideMenu = () => {
   mobileMenu.classList.toggle("show");
   items.forEach((item) => {
     item.addEventListener("click", () => {
-      showOrHideOption(item);
+      showOrHideOption(item, "show");
     });
   });
 };
 
 btnHamburger.addEventListener("click", showOrHideMenu);
+
+// Menu on desktop
+const desktopMenuItems = document.querySelectorAll(".nav__menu-desktop .items");
+
+desktopMenuItems.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    item.classList.add("showMenu");
+  });
+  item.addEventListener("mouseout", () => {
+    item.classList.remove("showMenu");
+  });
+});
