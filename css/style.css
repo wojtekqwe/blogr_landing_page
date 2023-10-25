@@ -376,6 +376,7 @@ body {
 }
 .section__title {
   margin-bottom: 30px;
+  margin-right: 5%;
 }
 .section__info {
   display: grid;
